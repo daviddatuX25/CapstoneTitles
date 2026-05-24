@@ -4004,8 +4004,7 @@ Result: Thriving transparency ecosystem</code></pre>
       return textParts.join('\n').trim();
     }
 
-    // --- Explore with AI (Redirect) ---
-    // --- Explore with AI (Redirect) ---
+    // --- Explore with AI (Redirect to Gemini) ---
     function exploreWithAI() {
       const query = document.getElementById('search-input').value.trim();
       const title = document.querySelector('.project-title h1')?.textContent || 'this capstone project';
@@ -4033,7 +4032,7 @@ Result: Thriving transparency ecosystem</code></pre>
       
       const maxUrlLength = 6000;
       
-      // Prepare short prompt for ChatGPT URL query parameter
+      // Prepare short prompt for Gemini URL query parameter
       let shortPrompt = `I want to explore the capstone project "${title}". `;
       if (query) {
         shortPrompt += `My question is: "${query}". `;
@@ -4041,17 +4040,17 @@ Result: Thriving transparency ecosystem</code></pre>
       shortPrompt += `I have copied the entire project knowledge base/documentation to my clipboard. I will paste it in my next message. Please prepare to receive it.`;
       
       const encodedShort = encodeURIComponent(shortPrompt);
-      const chatGPTUrl = `https://chatgpt.com/?q=${encodedShort}`;
+      const geminiUrl = `https://gemini.google.com/app?q=${encodedShort}`;
       
       // Copy prompt to clipboard
       navigator.clipboard.writeText(promptText).then(() => {
         showToast(
           "📋 Context Copied!",
-          "Use Ctrl+V (or Cmd+V) to paste the full documentation in ChatGPT. Redirecting in 4 seconds...",
+          "Use Ctrl+V (or Cmd+V) to paste the full documentation in Gemini. Redirecting in 4 seconds...",
           4000
         );
         setTimeout(() => {
-          window.open(chatGPTUrl, '_blank');
+          window.open(geminiUrl, '_blank');
         }, 3800);
       }).catch(err => {
         console.error("Clipboard copy failed, falling back to direct URL redirect: ", err);
@@ -4061,11 +4060,11 @@ Result: Thriving transparency ecosystem</code></pre>
           fallbackPrompt = fallbackPrompt.substring(0, maxUrlLength - 100) + "... [truncated due to URL limits]";
         }
         const encodedFallback = encodeURIComponent(fallbackPrompt);
-        const fallbackUrl = `https://chatgpt.com/?q=${encodedFallback}`;
+        const fallbackUrl = `https://gemini.google.com/app?q=${encodedFallback}`;
         
         showToast(
           "✨ Redirecting...",
-          "Opening ChatGPT with direct URL prompt...",
+          "Opening Gemini with direct URL prompt...",
           2000
         );
         setTimeout(() => {
@@ -4081,7 +4080,7 @@ Result: Thriving transparency ecosystem</code></pre>
       <span class="toast-icon">✨</span>
       <div class="toast-text-wrapper">
         <div class="toast-title">Copying Knowledge Base...</div>
-        <div class="toast-desc">Copying context to clipboard and opening ChatGPT</div>
+        <div class="toast-desc">Copying context to clipboard and opening Gemini</div>
       </div>
     </div>
     <div class="toast-progress"></div>

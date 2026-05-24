@@ -1885,67 +1885,83 @@ mark.highlight {
       const query = document.getElementById('search-input').value.trim();
       const title = document.querySelector('.project-title h1')?.textContent || 'this capstone project';
       const tagline = document.querySelector('.project-title h1')?.nextElementSibling?.textContent || '';
-      
-      const knowledgeBase = getKnowledgeBaseText();
-      
-      let promptText = `You are an AI assistant helping me analyze the capstone project "${title}" (${tagline}).\n\n`;
-      if (query) {
-        promptText += `My question/focus is: "${query}"\n\n`;
-      } else {
-        promptText += `Please help me explore this capstone project.\n\n`;
+      const fullKnowledgeBase = getKnowledgeBaseText();
+    
+      // Helper function to build the prompt with a given knowledge base
+      function buildPrompt(kbText) {
+        let text = `You are an AI assistant helping me analyze the capstone project "${title}" (${tagline}).\n\n`;
+        if (query) {
+          text += `My question/focus is: "${query}"\n\n`;
+        } else {
+          text += `Please help me explore this capstone project.\n\n`;
+        }
+        text += `Here is the comprehensive project documentation and knowledge base for context:\n`;
+        text += `=========================================\n`;
+        text += kbText;
+        text += `\n=========================================\n\n`;
+        if (query) {
+          text += `Please answer my question ("${query}") based on the documentation provided above. If the information isn't directly in the docs, use your general knowledge but clearly indicate what is from the docs and what is external extrapolation.`;
+        } else {
+          text += `Please provide a strategic overview of this project, list its core architecture elements, point out key panel defense risks/questions, and suggest how the presenters can best pitch this to a jury.`;
+        }
+        return text;
       }
+    
+      const fullPromptText = buildPrompt(fullKnowledgeBase);
+    
+      // Safe URL length constraint (standard max length is around 8k, let's use 7000 to be safe)
+      const maxUrlLength = 7000;
+      const baseUrl = "https://chatgpt.com/?q=";
+    
+      let finalPromptText = fullPromptText;
+    
+      // If the full URL would exceed the safe limit, let's truncate the knowledge base to fit
+      if (baseUrl.length + encodeURIComponent(fullPromptText).length > maxUrlLength) {
+        const emptyKbPrompt = buildPrompt("");
+        
+        let low = 0;
+        let high = fullKnowledgeBase.length;
+        let bestLimit = 0;
       
-      promptText += `Here is the comprehensive project documentation and knowledge base for context:\n`;
-      promptText += `=========================================\n`;
-      promptText += knowledgeBase;
-      promptText += `\n=========================================\n\n`;
+        while (low <= high) {
+          const mid = Math.floor((low + high) / 2);
+          const testKb = fullKnowledgeBase.substring(0, mid) + "\n... [documentation truncated due to length limits] ...";
+          const testPrompt = buildPrompt(testKb);
+          const encodedLen = encodeURIComponent(testPrompt).length;
+        
+          if (baseUrl.length + encodedLen <= maxUrlLength) {
+            bestLimit = mid;
+            low = mid + 1;
+          } else {
+            high = mid - 1;
+          }
+        }
       
-      if (query) {
-        promptText += `Please answer my question ("${query}") based on the documentation provided above. If the information isn't directly in the docs, use your general knowledge but clearly indicate what is from the docs and what is external extrapolation.`;
-      } else {
-        promptText += `Please provide a strategic overview of this project, list its core architecture elements, point out key panel defense risks/questions, and suggest how the presenters can best pitch this to a jury.`;
+        finalPromptText = buildPrompt(fullKnowledgeBase.substring(0, bestLimit) + "\n... [documentation truncated due to URL length limits] ...");
       }
-      
-      const maxUrlLength = 6000;
-      
-      // Prepare short prompt for ChatGPT URL query parameter
-      let shortPrompt = `I want to explore the capstone project "${title}". `;
-      if (query) {
-        shortPrompt += `My question is: "${query}". `;
-      }
-      shortPrompt += `I have copied the entire project knowledge base/documentation to my clipboard. I will paste it in my next message. Please prepare to receive it.`;
-      
-      const encodedShort = encodeURIComponent(shortPrompt);
-      const chatGPTUrl = `https://chatgpt.com/?q=${encodedShort}`;
-      
-      // Copy prompt to clipboard
-      navigator.clipboard.writeText(promptText).then(() => {
+    
+      const chatGPTUrl = `${baseUrl}${encodeURIComponent(finalPromptText)}`;
+    
+      // Copy full untruncated prompt to clipboard as backup, then redirect
+      navigator.clipboard.writeText(fullPromptText).then(() => {
         showToast(
           "📋 Context Copied!",
-          "Copied knowledge base to clipboard. Redirecting to ChatGPT...",
+          "Sending knowledge base to ChatGPT automatically...",
           2500
         );
         setTimeout(() => {
           window.open(chatGPTUrl, '_blank');
-        }, 2000);
+        }, 1500);
       }).catch(err => {
         console.error("Clipboard copy failed, falling back to direct URL redirect: ", err);
-        
-        let fallbackPrompt = promptText;
-        if (fallbackPrompt.length > maxUrlLength) {
-          fallbackPrompt = fallbackPrompt.substring(0, maxUrlLength - 100) + "... [truncated due to URL limits]";
-        }
-        const encodedFallback = encodeURIComponent(fallbackPrompt);
-        const fallbackUrl = `https://chatgpt.com/?q=${encodedFallback}`;
-        
         showToast(
           "✨ Redirecting...",
           "Opening ChatGPT with direct URL prompt...",
           2000
         );
         setTimeout(() => {
-          window.open(fallbackUrl, '_blank');
-        }, 1500);
+          window.open(chatGPTUrl, '_blank');
+        }, 1200);
       });
     }
   </script>

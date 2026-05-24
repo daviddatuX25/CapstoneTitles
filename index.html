@@ -293,6 +293,32 @@ footer {
 @keyframes fadeInUp {
   to { opacity: 1; transform: translateY(0); }
 }
+
+.section-header {
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-family: var(--heading);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #e8ecf4 0%, #93b4ff 50%, #6ee7b7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header .subtitle {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
 </style>
 </head>
 <body>
@@ -393,7 +419,100 @@ footer {
       </a>
     </div>
 
-    <footer>&copy; 2026 Capstone Presentations</footer>
+    <div class="divider"></div>
+
+    <div class="section-header">
+      <h2>Defense Guides &amp; Details</h2>
+      <p class="subtitle">Complete searchable knowledge bases, expected panel questions, architectural diagrams, and key concepts.</p>
+    </div>
+
+    <div class="grid">
+      <a class="card fade-in" href="capstone-titles/capstone1/defense-and-details.html">
+        <div class="card-icon">&#x1F4D6;</div>
+        <div class="card-num">Capstone 1 Portal</div>
+        <div class="card-title">StudentHub</div>
+        <div class="card-tagline">Detailed breakdown of the campus PisoWiFi integration, Dokploy auto-deployment flow, and local micro-transactions ecosystem.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">Database Schema</span>
+            <span class="tech-pill">Panel Q&amp;A</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="card fade-in" href="capstone-titles/capstone2/defense-and-details.html">
+        <div class="card-icon">&#x1F9D1;&zwj;&#x1F4BB;</div>
+        <div class="card-num">Capstone 2 Portal</div>
+        <div class="card-title">SynapseRT</div>
+        <div class="card-tagline">Technical specifications of multi-agent cognitive orchestration, task routing algorithms, and fallback mechanisms.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">LLM Prompting</span>
+            <span class="tech-pill">Flow Diagrams</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="card fade-in" href="capstone-titles/capstone3/defense-and-details.html">
+        <div class="card-icon">&#x1F4CB;</div>
+        <div class="card-num">Capstone 3 Portal</div>
+        <div class="card-title">FlexiQueue</div>
+        <div class="card-tagline">Deep-dive into queue status scheduling, notification layers, ticket allocation algorithms, and institutional scaling benchmarks.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">Service Design</span>
+            <span class="tech-pill">API Contracts</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="card fade-in" href="capstone-titles/capstone4/defense-and-details.html">
+        <div class="card-icon">&#x1F512;</div>
+        <div class="card-num">Capstone 4 Portal</div>
+        <div class="card-title">SecureCAT</div>
+        <div class="card-tagline">Security audit of proctored admission software, role-based access control policies, and cheat prevention measures.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">Token Auth</span>
+            <span class="tech-pill">Audit Log</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="card fade-in" href="capstone-titles/capstone5/defense-and-details.html">
+        <div class="card-icon">&#x1F4AC;</div>
+        <div class="card-num">Capstone 5 Portal</div>
+        <div class="card-title">CollabAcad</div>
+        <div class="card-tagline">Real-time WebSocket events configuration, messaging database, forum moderation mechanics, and room allocation logs.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">Event Broker</span>
+            <span class="tech-pill">Q&amp;A Accordion</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <a class="card fade-in" href="capstone-titles/capstone6/defense-and-details.html">
+        <div class="card-icon">&#x1F50E;</div>
+        <div class="card-num">Capstone 6 Portal</div>
+        <div class="card-title">FlowPH</div>
+        <div class="card-tagline">Crowdsourced public ledger audits, budget allocations tracking structure, and validation consensus protocols.</div>
+        <div class="card-footer">
+          <div class="card-tech">
+            <span class="tech-pill">Ledger Spec</span>
+            <span class="tech-pill">Search Engine</span>
+          </div>
+          <span class="card-arrow">&rarr;</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>&copy; 2026 Capstone Presentations &amp; Defense Guides</footer>
   </div>
 </body>
 </html>

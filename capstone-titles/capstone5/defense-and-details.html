@@ -888,7 +888,7 @@ mark.highlight {
       <div class="search-flex-container">
         <div class="search-wrapper">
           <span class="search-icon">&#x1F50D;</span>
-          <input type="text" class="search-input" id="search-input" placeholder="Search this guide (e.g. database, security, architecture, key concepts)...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search guide or type AI question, then click 'Explore with AI'...">
           <button class="search-clear" id="search-clear">&times;</button>
         </div>
         <button class="ai-explore-btn" id="ai-explore-btn" onclick="exploreWithAI()">
@@ -1008,7 +1008,7 @@ mark.highlight {
   <li>Layer 1 — <strong>Live Event Broadcast Engine</strong>: Built on Socket.IO over WebSockets, administrators push real-time announcements, pinned FAQs, and live ticker alerts to all subscribed clients within under 200 milliseconds, with no page refresh required.</li>
   </ul>
   <ul class='searchable'>
-  <li>Layer 2 — <strong>Segmented Weighted Voting System</strong>: Our voting module applies a department-normalized weight formula: $W = \frac{V}{P} \times 100$, where $V$ is departmental yes-votes and $P$ is departmental population. This produces a percentage-based equity score per unit, aggregated into a final institutional result — ensuring CTE&#x27;s 300 students carry proportional voice against CAS&#x27;s 1,200.</li>
+  <li>Layer 2 — <strong>Segmented Weighted Voting System</strong>: Our voting module applies a department-normalized weight formula: <em></em>MATH<em>BLOCK</em>0<em></em>, where <em></em>MATH<em>BLOCK</em>1<em></em> is departmental yes-votes and <em></em>MATH<em>BLOCK</em>2<em></em> is departmental population. This produces a percentage-based equity score per unit, aggregated into a final institutional result — ensuring CTE&#x27;s 300 students carry proportional voice against CAS&#x27;s 1,200.</li>
   </ul>
   <ul class='searchable'>
   <li>Layer 3 — <strong>Managed Anonymous Feedback Channels</strong>: Forum administrators may toggle anonymous mode per thread. Before publication, all anonymous posts pass through a server-side keyword filter array. Flagged posts are held for admin review. Admins retain a de-anonymization table in a separate, access-controlled database schema, visible only to system administrators under justifiable circumstances.</li>
@@ -1114,16 +1114,16 @@ mark.highlight {
 <td>Append-only for audit; soft-delete for posts</td>
 </tr>
 </tbody></table></div>
-  <p class='searchable'><strong>Information Salience Metric for Pinned Post Prioritization ($V_{gold}$):</strong></p>
+  <p class='searchable'><strong>Information Salience Metric for Pinned Post Prioritization (<em></em>MATH<em>BLOCK</em>0<em></em>):</strong></p>
   <p class='searchable'>For ranking pinned forum posts in the event board, we define a salience score:</p>
-  <p class='searchable'>$$V<em>{gold} = \frac{\sum</em>{k=1}^{K} \alpha<em>k \cdot r</em>k}{\sum<em>{k=1}^{K} \alpha</em>k}$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
   <p class='searchable'>Where:</p>
   <ul class='searchable'>
-  <li>$K$ = number of engagement signals (views, replies, reactions, saves)</li>
-  <li>$r_k$ = raw engagement count for signal $k$</li>
-  <li>$\alpha<em>k$ = signal weight ($\alpha</em>{reply} = 0.4,\ \alpha<em>{view} = 0.1,\ \alpha</em>{reaction} = 0.3,\ \alpha_{save} = 0.2$)</li>
+  <li><em></em>MATH<em>BLOCK</em>0<em></em> = number of engagement signals (views, replies, reactions, saves)</li>
+  <li><em></em>MATH<em>BLOCK</em>0<em></em> = raw engagement count for signal <em></em>MATH<em>BLOCK</em>1<em></em></li>
+  <li><em></em>MATH<em>BLOCK</em>0<em></em> = signal weight (<em></em>MATH<em>BLOCK</em>1<em></em>)</li>
   </ul>
-  <p class='searchable'>Posts with $V_{gold}$ below a rolling 48-hour median threshold are demoted from the pinned board. This governs the L1 Redis sorted set that drives the live event feed.</p>
+  <p class='searchable'>Posts with <em></em>MATH<em>BLOCK</em>0<em></em> below a rolling 48-hour median threshold are demoted from the pinned board. This governs the L1 Redis sorted set that drives the live event feed.</p>
 </section>
 <section id="cat-23-asynchronous-multi-service-orchestration" class="content-section">
   <h2 class="section-title searchable">2.3 Asynchronous Multi-Service Orchestration</h2>
@@ -1210,18 +1210,18 @@ anon:review:queue                            → Redis List (pending moderation)
 <section id="cat-25-weighted-voting-formula--formal-derivation" class="content-section">
   <h2 class="section-title searchable">2.5 Weighted Voting Formula — Formal Derivation</h2>
   <p class='searchable'><strong>Base Departmental Weight:</strong></p>
-  <p class='searchable'>$$W<em>d = \frac{V</em>d}{P_d} \times 100$$</p>
-  <p class='searchable'>Where $W<em>d$ is the weighted participation score (0–100) for department $d$, $V</em>d$ is the count of &quot;Yes&quot; votes from department $d$, and $P_d$ is the total registered population of department $d$.</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> is the weighted participation score (0–100) for department <em></em>MATH<em>BLOCK</em>1<em></em>, <em></em>MATH<em>BLOCK</em>2<em></em> is the count of &quot;Yes&quot; votes from department <em></em>MATH<em>BLOCK</em>3<em></em>, and <em></em>MATH<em>BLOCK</em>4<em></em> is the total registered population of department <em></em>MATH<em>BLOCK</em>5<em></em>.</p>
   <p class='searchable'><strong>Institutional Aggregate Score:</strong></p>
-  <p class='searchable'>$$W<em>{inst} = \frac{1}{|D|} \sum</em>{d \in D} W_d$$</p>
-  <p class='searchable'>Where $D$ is the set of all participating departments. This arithmetic mean of departmental scores gives each department equal institutional weight regardless of population.</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> is the set of all participating departments. This arithmetic mean of departmental scores gives each department equal institutional weight regardless of population.</p>
   <p class='searchable'><strong>Example:</strong></p>
   <div class='table-container'><table class='searchable'>
 <thead><tr>
 <th>Department</th>
-<th>Population ($P_d$)</th>
-<th>Yes Votes ($V_d$)</th>
-<th>$W_d$</th>
+<th>Population (<em></em>MATH<em>BLOCK</em>0<em></em>)</th>
+<th>Yes Votes (<em></em>MATH<em>BLOCK</em>0<em></em>)</th>
+<th><em></em>MATH<em>BLOCK</em>0<em></em></th>
 </tr></thead>
 <tbody>
 <tr>
@@ -1249,11 +1249,11 @@ anon:review:queue                            → Redis List (pending moderation)
 <td>80.00</td>
 </tr>
 </tbody></table></div>
-  <p class='searchable'>$$W_{inst} = \frac{66.67 + 80.00 + 44.44 + 80.00}{4} = 67.78$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
   <p class='searchable'>Without weighting, CAS&#x27;s 800 votes dominate. With weighting, CTE&#x27;s 80% participation score carries equal institutional weight to CAS&#x27;s 66.67%.</p>
-  <p class='searchable'><strong>Multi-Objective Constraint:</strong> The system enforces a minimum quorum threshold $Q$:</p>
-  <p class='searchable'>$$Q<em>d = \frac{V</em>d}{P<em>d} \geq 0.30 \quad \forall d \in D</em>{required}$$</p>
-  <p class='searchable'>Departments below 30% participation are flagged as &quot;low quorum&quot; and their $W_d$ is displayed with a warning indicator on the dashboard.</p>
+  <p class='searchable'><strong>Multi-Objective Constraint:</strong> The system enforces a minimum quorum threshold <em></em>MATH<em>BLOCK</em>0<em></em>:</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Departments below 30% participation are flagged as &quot;low quorum&quot; and their <em></em>MATH<em>BLOCK</em>0<em></em> is displayed with a warning indicator on the dashboard.</p>
   <hr>
 </section>
 <section id="3-four-critical-defense-arguments" class="content-section">
@@ -1303,7 +1303,7 @@ anon:review:queue                            → Redis List (pending moderation)
   <ul class='searchable'>
   <li>Quantitative: k6 load test will generate a latency percentile report (P50, P95, P99) for both systems.</li>
   <li>Qualitative: SUS (System Usability Scale) score target ≥ 70 (above industry average for acceptable usability).</li>
-  <li>Equity validation: We will run a simulation with synthetic department population data to verify that $W_{inst}$ produces correct equity normalization across 5 varied population distributions.</li>
+  <li>Equity validation: We will run a simulation with synthetic department population data to verify that <em></em>MATH<em>BLOCK</em>0<em></em> produces correct equity normalization across 5 varied population distributions.</li>
   </ul>
   <hr>
 </section>
@@ -1398,7 +1398,7 @@ anon:review:queue                            → Redis List (pending moderation)
 <tr>
 <td><strong>Overview First</strong></td>
 <td>Event Board homepage renders all active events/polls as summary cards (title, dept tag, time remaining, participation %)</td>
-<td>Redis sorted set of $V_{gold}$ scores drives card ranking</td>
+<td>Redis sorted set of <em></em>MATH<em>BLOCK</em>0<em></em> scores drives card ranking</td>
 </tr>
 <tr>
 <td><strong>Zoom</strong></td>
@@ -1412,13 +1412,13 @@ anon:review:queue                            → Redis List (pending moderation)
 </tr>
 <tr>
 <td><strong>Details-on-Demand</strong></td>
-<td>Hovering over a department bar reveals tooltip: raw count, population, $W_d$ score, quorum status</td>
+<td>Hovering over a department bar reveals tooltip: raw count, population, <em></em>MATH<em>BLOCK</em>0<em></em> score, quorum status</td>
 <td>Computed on-demand from Redis + PostgreSQL join</td>
 </tr>
 </tbody></table></div>
   <p class='searchable'>For the Forum view:</p>
   <ul class='searchable'>
-  <li><strong>Overview</strong>: Thread list sorted by $V_{gold}$ salience score</li>
+  <li><strong>Overview</strong>: Thread list sorted by <em></em>MATH<em>BLOCK</em>0<em></em> salience score</li>
   <li><strong>Filter</strong>: Tag-based filtering (Academic, Administrative, Feedback, Anonymous)</li>
   <li><strong>Details-on-Demand</strong>: Thread expansion loads full reply chain, author badges, and (for admins) moderation flags</li>
   </ul>
@@ -1519,7 +1519,7 @@ Client Connections:
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>Under $W<em>d = \frac{V</em>d}{P<em>d} \times 100$, increasing $V</em>d$ (votes cast) while $P<em>d$ is fixed only moves $W</em>d$ toward 100 — the maximum gain is bounded. A department with 1,200 students achieving 100% participation scores $W<em>d = 100$. A department with 300 students achieving 80% participation scores $W</em>d = 80$. The institutional aggregate $W<em>{inst}$ gives each department equal weight in the mean. Flooding votes from CAS cannot exceed $W</em>{CAS} = 100$, which is then averaged with all other departments.</p></div>
+        <div class="qa-answer"><p>Under <em></em>MATH<em>BLOCK</em>0<em></em>, increasing <em></em>MATH<em>BLOCK</em>1<em></em> (votes cast) while <em></em>MATH<em>BLOCK</em>2<em></em> is fixed only moves <em></em>MATH<em>BLOCK</em>3<em></em> toward 100 — the maximum gain is bounded. A department with 1,200 students achieving 100% participation scores <em></em>MATH<em>BLOCK</em>4<em></em>. A department with 300 students achieving 80% participation scores <em></em>MATH<em>BLOCK</em>5<em></em>. The institutional aggregate <em></em>MATH<em>BLOCK</em>6<em></em> gives each department equal weight in the mean. Flooding votes from CAS cannot exceed <em></em>MATH<em>BLOCK</em>7<em></em>, which is then averaged with all other departments.</p></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-6" data-category="Category B: Weighted Voting">
@@ -1529,13 +1529,13 @@ Client Connections:
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>$Q<em>d = V</em>d / P<em>d \geq 0.30$. This is checked after the poll closes. Departments below quorum are flagged visually on the dashboard with a &quot;Low Participation&quot; badge. Their $W</em>d$ is included in $W_{inst}$ but displayed with a confidence warning. The panel can configure whether sub-quorum departments are excluded from the final count — this is a system administration setting.</p></div>
+        <div class="qa-answer"><p><em></em>MATH<em>BLOCK</em>0<em></em>. This is checked after the poll closes. Departments below quorum are flagged visually on the dashboard with a &quot;Low Participation&quot; badge. Their <em></em>MATH<em>BLOCK</em>1<em></em> is included in <em></em>MATH<em>BLOCK</em>2<em></em> but displayed with a confidence warning. The panel can configure whether sub-quorum departments are excluded from the final count — this is a system administration setting.</p></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-7" data-category="Category B: Weighted Voting">
       <button class="qa-header">
         <span class="qa-q-badge">Q</span>
-        <span class="qa-question-text">Why arithmetic mean for $W_{inst}$ and not weighted mean by department size?</span>
+        <span class="qa-question-text">Why arithmetic mean for <em></em>MATH<em>BLOCK</em>0<em></em> and not weighted mean by department size?</span>
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
@@ -1549,7 +1549,7 @@ Client Connections:
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>Yes — this is the small-department noise problem. Our quorum threshold of 30% mitigates this: a department with only 5 registered members needs at least 2 votes to be considered. For very small sub-units, administrators can configure minimum absolute vote thresholds (e.g., $V_d \geq 10$) before including the department in the aggregate. This is exposed as a poll configuration option.</p></div>
+        <div class="qa-answer"><p>Yes — this is the small-department noise problem. Our quorum threshold of 30% mitigates this: a department with only 5 registered members needs at least 2 votes to be considered. For very small sub-units, administrators can configure minimum absolute vote thresholds (e.g., <em></em>MATH<em>BLOCK</em>0<em></em>) before including the department in the aggregate. This is exposed as a poll configuration option.</p></div>
       </div>
     </div>
   </div>
@@ -1609,7 +1609,7 @@ Client Connections:
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>The overview level shows all departments as a single stacked bar chart of aggregate $W<em>{inst}$. The zoom level allows clicking a department bar to expand a sub-chart of section-level participation within that department. The filter level lets the admin select specific sections or date ranges. Details-on-demand are triggered by hovering any bar, revealing the raw count, population, $W</em>d$, and quorum status in a tooltip. This three-level drill-down mirrors Shneiderman&#x27;s information-seeking mantra precisely.</p></div>
+        <div class="qa-answer"><p>The overview level shows all departments as a single stacked bar chart of aggregate <em></em>MATH<em>BLOCK</em>0<em></em>. The zoom level allows clicking a department bar to expand a sub-chart of section-level participation within that department. The filter level lets the admin select specific sections or date ranges. Details-on-demand are triggered by hovering any bar, revealing the raw count, population, <em></em>MATH<em>BLOCK</em>1<em></em>, and quorum status in a tooltip. This three-level drill-down mirrors Shneiderman&#x27;s information-seeking mantra precisely.</p></div>
       </div>
     </div>
   </div>
@@ -1688,7 +1688,7 @@ Client Connections:
     <div class="qa-item searchable" data-qa-id="qa-18" data-category="Category F: Database Design">
       <button class="qa-header">
         <span class="qa-q-badge">Q</span>
-        <span class="qa-question-text">How do you compute $W_d$ efficiently at scale in PostgreSQL?</span>
+        <span class="qa-question-text">How do you compute <em></em>MATH<em>BLOCK</em>0<em></em> efficiently at scale in PostgreSQL?</span>
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
@@ -1744,7 +1744,7 @@ Client Connections:
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>Unit tests (Jest): 15 test cases covering edge conditions — all votes from one department, zero votes, single-member departments, exactly 30% quorum, 100% participation. Integration tests: Supertest against the <code>/api/polls/:id/results</code> endpoint with seeded database data. Formula validation: synthetic dataset with known ground-truth outputs compared against computed $W<em>d$ and $W</em>{inst}$ values.</p></div>
+        <div class="qa-answer"><p>Unit tests (Jest): 15 test cases covering edge conditions — all votes from one department, zero votes, single-member departments, exactly 30% quorum, 100% participation. Integration tests: Supertest against the <code>/api/polls/:id/results</code> endpoint with seeded database data. Formula validation: synthetic dataset with known ground-truth outputs compared against computed <em></em>MATH<em>BLOCK</em>0<em></em> and <em></em>MATH<em>BLOCK</em>1<em></em> values.</p></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-22" data-category="Category H: Testing & Evaluation">
@@ -1810,7 +1810,7 @@ Client Connections:
 <td><strong>Phase 2: Real-Time Features</strong></td>
 <td>Weeks 5–9</td>
 <td>Live Event Broadcast, Weighted Voting with Redis cache, Anonymous Posting with keyword filter</td>
-<td>Sub-300ms broadcast latency; correct $W_d$ computation on 5 test departments; anonymous posts intercepted at 80% recall</td>
+<td>Sub-300ms broadcast latency; correct <em></em>MATH<em>BLOCK</em>0<em></em> computation on 5 test departments; anonymous posts intercepted at 80% recall</td>
 </tr>
 <tr>
 <td><strong>Phase 3: Analytics &amp; Evaluation</strong></td>
@@ -2112,32 +2112,32 @@ Client Connections:
   <p class='searchable'>Socket.IO&#x27;s room-based namespace architecture maps directly onto CollabAcad&#x27;s context model. Each authenticated socket connection is assigned to rooms corresponding to the user&#x27;s role and department affiliation: <code>dept:{code}</code> and <code>role:{roleName}</code>. Event emissions are scoped to specific rooms, implementing what Dourish and Bellotti (1992) term <em>awareness filtering</em> — the selective routing of shared workspace events to relevant stakeholders, preventing information overload while maintaining operational awareness.</p>
   <p class='searchable'><strong>End-to-End Latency Composition:</strong></p>
   <p class='searchable'>The theoretical minimum latency for a broadcast event is governed by:</p>
-  <p class='searchable'>$$L<em>{total} = L</em>{server} + L<em>{redis} + L</em>{socket} + L_{render}$$</p>
-  <p class='searchable'>Where $L<em>{server}$ is application processing time (~10ms), $L</em>{redis}$ is pub/sub fanout latency (~5ms), $L<em>{socket}$ is Socket.IO emission overhead (~10ms), and $L</em>{render}$ is client-side React reconciliation (~20ms). The theoretical total is approximately 45ms — well within the 200ms perceptual threshold established by Nielsen (1993) for &quot;immediate&quot; system response.</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> is application processing time (~10ms), <em></em>MATH<em>BLOCK</em>1<em></em> is pub/sub fanout latency (~5ms), <em></em>MATH<em>BLOCK</em>2<em></em> is Socket.IO emission overhead (~10ms), and <em></em>MATH<em>BLOCK</em>3<em></em> is client-side React reconciliation (~20ms). The theoretical total is approximately 45ms — well within the 200ms perceptual threshold established by Nielsen (1993) for &quot;immediate&quot; system response.</p>
   <h3 class="searchable">2.3 Participatory Democracy Theory and Equity-Normalized Voting</h3>
   <p class='searchable'>The mathematical foundations of CollabAcad&#x27;s weighted voting module are grounded in the literature on proportional representation and deliberative democracy (Lijphart, 1999; Rawls, 1971). The central theoretical problem is the majority tyranny inherent in unweighted voting across constituencies of unequal size. Arrow&#x27;s Impossibility Theorem (1963) establishes that no voting system can simultaneously satisfy all fairness criteria; however, within a constrained institutional context, department-level normalization represents a principled compromise that maximizes inter-departmental equity.</p>
   <p class='searchable'><strong>Formal Definition of the Weighted Participation Score:</strong></p>
-  <p class='searchable'>For department $d$ participating in poll $p$, the weighted participation score $W_d$ is defined as:</p>
-  <p class='searchable'>$$W<em>d = \frac{V</em>d}{P_d} \times 100$$</p>
-  <p class='searchable'>Where $V<em>d \in \mathbb{Z}^+$ denotes the count of affirmative votes cast by registered members of department $d$, and $P</em>d \in \mathbb{Z}^+$ denotes the total registered membership population of department $d$. The resulting $W_d \in [0, 100]$ represents the departmental participation rate as a percentage, normalized to the department&#x27;s own population — independent of inter-departmental population disparities.</p>
+  <p class='searchable'>For department <em></em>MATH<em>BLOCK</em>0<em></em> participating in poll <em></em>MATH<em>BLOCK</em>1<em></em>, the weighted participation score <em></em>MATH<em>BLOCK</em>2<em></em> is defined as:</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> denotes the count of affirmative votes cast by registered members of department <em></em>MATH<em>BLOCK</em>1<em></em>, and <em></em>MATH<em>BLOCK</em>2<em></em> denotes the total registered membership population of department <em></em>MATH<em>BLOCK</em>3<em></em>. The resulting <em></em>MATH<em>BLOCK</em>4<em></em> represents the departmental participation rate as a percentage, normalized to the department&#x27;s own population — independent of inter-departmental population disparities.</p>
   <p class='searchable'><strong>Institutional Aggregate Score:</strong></p>
-  <p class='searchable'>The institutional consensus metric $W_{inst}$ is computed as the arithmetic mean of all departmental weighted scores across the participating department set $D$:</p>
-  <p class='searchable'>$$W<em>{inst} = \frac{1}{|D|} \sum</em>{d \in D} W_d$$</p>
+  <p class='searchable'>The institutional consensus metric <em></em>MATH<em>BLOCK</em>0<em></em> is computed as the arithmetic mean of all departmental weighted scores across the participating department set <em></em>MATH<em>BLOCK</em>1<em></em>:</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
   <p class='searchable'>The arithmetic mean assigns equal institutional weight to each department regardless of population, operationalizing the principle that each academic unit constitutes an equal deliberative actor within the institutional polity — analogous to equal state representation in bicameral legislative structures.</p>
   <p class='searchable'><strong>Quorum Constraint:</strong></p>
-  <p class='searchable'>To prevent low-participation outliers from distorting the aggregate, a minimum quorum threshold $Q$ is enforced:</p>
-  <p class='searchable'>$$Q<em>d = \frac{V</em>d}{P<em>d} \geq \tau</em>Q, \quad \tau_Q = 0.30$$</p>
-  <p class='searchable'>Departments satisfying $Q<em>d &lt; \tau</em>Q$ are flagged for low participation. System administrators may configure whether sub-quorum departments are excluded from the aggregate computation or retained with a confidence penalty.</p>
+  <p class='searchable'>To prevent low-participation outliers from distorting the aggregate, a minimum quorum threshold <em></em>MATH<em>BLOCK</em>0<em></em> is enforced:</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Departments satisfying <em></em>MATH<em>BLOCK</em>0<em></em> are flagged for low participation. System administrators may configure whether sub-quorum departments are excluded from the aggregate computation or retained with a confidence penalty.</p>
   <p class='searchable'><strong>Theoretical Validation — Population Disparity Simulation:</strong></p>
   <p class='searchable'>Consider a five-department institution with the following composition:</p>
   <div class='table-container'><table class='searchable'>
 <thead><tr>
 <th>Dept</th>
-<th>$P_d$</th>
-<th>$V_d$</th>
+<th><em></em>MATH<em>BLOCK</em>0<em></em></th>
+<th><em></em>MATH<em>BLOCK</em>0<em></em></th>
 <th>Raw Share</th>
-<th>$W_d$</th>
-<th>$W_{inst}$ Contribution</th>
+<th><em></em>MATH<em>BLOCK</em>0<em></em></th>
+<th><em></em>MATH<em>BLOCK</em>0<em></em> Contribution</th>
 </tr></thead>
 <tbody>
 <tr>
@@ -2205,7 +2205,7 @@ Client Connections:
   <p class='searchable'>CollabAcad&#x27;s backend decomposes into four asynchronously orchestrated services communicating via Redis Pub/Sub channels, a pattern consistent with the microservices architectural style (Newman, 2015) adapted for single-institution deployment scale:</p>
   <ul class='searchable'>
   <li><strong>Event Broadcast Service</strong>: Consumes administrator-authored announcements and emits role-segmented Socket.IO events to subscribed client rooms.</li>
-  <li><strong>Vote Aggregation Service</strong>: Processes individual vote submissions via a Bull job queue, computes $W_d$ per department, and emits live tally snapshots to poll subscriber rooms.</li>
+  <li><strong>Vote Aggregation Service</strong>: Processes individual vote submissions via a Bull job queue, computes <em></em>MATH<em>BLOCK</em>0<em></em> per department, and emits live tally snapshots to poll subscriber rooms.</li>
   <li><strong>Anonymity Moderation Service</strong>: Intercepts anonymous post submissions, applies the keyword filter pipeline, routes flagged content to the admin review queue, and publishes cleared posts to the forum service.</li>
   <li><strong>Notification Delivery Service</strong>: Fans out per-user bell notifications via Socket.IO to individual user socket rooms.</li>
   </ul>
@@ -2242,9 +2242,9 @@ Client Connections:
 <td>Append-only (audit); soft-delete (posts)</td>
 </tr>
 </tbody></table></div>
-  <p class='searchable'>The <strong>Information Salience Score</strong> $V_{gold}$ governs L1 sorted set ordering for the event feed:</p>
-  <p class='searchable'>$$V<em>{gold} = \frac{\sum</em>{k=1}^{K} \alpha<em>k \cdot r</em>k}{\sum<em>{k=1}^{K} \alpha</em>k}$$</p>
-  <p class='searchable'>Where engagement signals $k \in \{\text{view}, \text{reply}, \text{reaction}, \text{save}\}$ carry weights $\alpha = \{0.1, 0.4, 0.3, 0.2\}$ respectively. Posts with $V_{gold}$ below the rolling 48-hour median are demoted from the pinned board — implementing a recency-and-engagement-aware replacement policy.</p>
+  <p class='searchable'>The <strong>Information Salience Score</strong> <em></em>MATH<em>BLOCK</em>0<em></em> governs L1 sorted set ordering for the event feed:</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where engagement signals <em></em>MATH<em>BLOCK</em>0<em></em> carry weights <em></em>MATH<em>BLOCK</em>1<em></em> respectively. Posts with <em></em>MATH<em>BLOCK</em>2<em></em> below the rolling 48-hour median are demoted from the pinned board — implementing a recency-and-engagement-aware replacement policy.</p>
   <h3 class="searchable">3.3 Semantic Cache Coherence for Vote State</h3>
   <p class='searchable'>Concurrent vote submissions targeting the same departmental tally introduce data race conditions under naive implementation. CollabAcad applies a software-defined coherence protocol modeled after the MESI cache coherence framework:</p>
   <div class='table-container'><table class='searchable'>
@@ -2287,7 +2287,7 @@ Client Connections:
 <tbody>
 <tr>
 <td>Overview</td>
-<td>Aggregate $W_{inst}$ displayed as a single gauge; all departments shown as color-coded horizontal bars</td>
+<td>Aggregate <em></em>MATH<em>BLOCK</em>0<em></em> displayed as a single gauge; all departments shown as color-coded horizontal bars</td>
 <td>Redis sorted set: <code>vote:poll:{id}:result</code></td>
 </tr>
 <tr>
@@ -2302,7 +2302,7 @@ Client Connections:
 </tr>
 <tr>
 <td>Details-on-Demand</td>
-<td>Hover tooltip: $V<em>d$, $P</em>d$, $W_d$, quorum status, timestamp of last vote</td>
+<td>Hover tooltip: <em></em>MATH<em>BLOCK</em>0<em></em>, <em></em>MATH<em>BLOCK</em>1<em></em>, <em></em>MATH<em>BLOCK</em>2<em></em>, quorum status, timestamp of last vote</td>
 <td>Computed join: Redis snapshot + departments table</td>
 </tr>
 </tbody></table></div>
@@ -2381,7 +2381,7 @@ Client Connections:
 <td>&gt; 90% during active poll</td>
 </tr>
 <tr>
-<td>$W_d$ Formula Accuracy</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em> Formula Accuracy</td>
 <td>100% match against ground-truth computations</td>
 </tr>
 </tbody></table></div>
@@ -2390,8 +2390,8 @@ Client Connections:
   <p class='searchable'><strong>NASA-TLX (Task Load Index):</strong> A 6-dimension workload assessment covering Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration (Hart &amp; Staveland, 1988). Administered to 30 participants (15 experimental: CollabAcad; 15 control: Facebook Messenger GC) after a structured 2-week usage period. Primary hypothesis: CollabAcad participants report significantly lower scores on the Mental Demand and Frustration subscales (p &lt; 0.05, two-tailed t-test).</p>
   <p class='searchable'><strong>System Usability Scale (SUS):</strong> A 10-item standardized usability questionnaire (Brooke, 1996). Administered after a 30-minute structured task session comprising 5 predefined tasks. Target: SUS ≥ 70 (acceptable threshold); aspirational target ≥ 85 (excellent).</p>
   <p class='searchable'><strong>Anonymous Filter Evaluation:</strong> A 200-post labeled corpus (100 toxic, 100 benign) including Filipino/Tagalog slurs, English profanity, l33tspeak variants, and benign posts containing flaggable substrings. Filter performance evaluated on Precision and Recall:</p>
-  <p class='searchable'>$$\text{Precision} = \frac{TP}{TP + FP} \geq 0.85$$</p>
-  <p class='searchable'>$$\text{Recall} = \frac{TP}{TP + FN} \geq 0.80$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
   <hr>
   <h3 class="searchable">7. Conclusion</h3>
   <p class='searchable'>CollabAcad presents a theoretically grounded architectural response to documented failures in Philippine institutional communication infrastructure. By synthesizing Weiser&#x27;s ubiquitous computing paradigm, Arrow&#x27;s participatory democracy theory, Dillenbourg&#x27;s orchestration graph framework, and Shneiderman&#x27;s visual information-seeking taxonomy into a coherent real-time web system, CollabAcad advances the state of practice in institutional collaborative platforms beyond both consumer social networks and generic learning management systems. The three novel contributions — Socket.IO role-segmented broadcast, department-normalized weighted voting, and managed pseudonymous discourse — address structurally distinct failure modes with architecturally distinct solutions. Evaluation will provide empirical validation across both technical performance dimensions and human-centric usability dimensions, producing a replicable assessment framework for future institutional platform deployments.</p>
@@ -2569,7 +2569,7 @@ Client Connections:
   <li>Left panel: <strong>Segmented Weighted Voting Simulator</strong>. Sliders let panelists adjust votes and populations for two departments (e.g. CAS and CTE) and compare the Unweighted Raw Count (where the CAS majority dominates the outcome) to the Normalized Weighted Score (where voices are balanced).</li>
   <li>Right panel: <strong>Managed Anonymity Toxicity Filter</strong>. A text entry field where typing toxic words (e.g. &quot;cheat&quot;, &quot;scam&quot;, &quot;stupid&quot;) triggers real-time keyword flagging, demonstrating the pre-publication screening queue.</li>
   </ul>
-  <p class='searchable'><strong>Equations displayed:</strong> $$W<em>d = \frac{V</em>d}{P<em>d} \times 100$$ $$W</em>{inst} = \frac{1}{|D|} \sum<em>{d \in D} W</em>d$$</p>
+  <p class='searchable'><strong>Equations displayed:</strong> <em></em>MATH<em>BLOCK</em>0<em></em> <em></em>MATH<em>BLOCK</em>1<em></em></p>
   <p class='searchable'><strong>Speaker Script:</strong></p>
   <blockquote><p>&quot;Let&#x27;s demonstrate the mathematical and security mechanisms that ground our research.</p>
 <p>On the left, we show the <strong>Segmented Weighted Voting Simulator</strong>. If we have a large college like CAS with 1,200 students, and a small college like CTE with 300 students—a raw headcount vote of 600 CAS students will easily crush 240 CTE students, representing a 71% raw majority for CAS&#x27;s preference.</p>

@@ -888,7 +888,7 @@ mark.highlight {
       <div class="search-flex-container">
         <div class="search-wrapper">
           <span class="search-icon">&#x1F50D;</span>
-          <input type="text" class="search-input" id="search-input" placeholder="Search this guide (e.g. database, security, architecture, key concepts)...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search guide or type AI question, then click 'Explore with AI'...">
           <button class="search-clear" id="search-clear">&times;</button>
         </div>
         <button class="ai-explore-btn" id="ai-explore-btn" onclick="exploreWithAI()">
@@ -959,17 +959,17 @@ mark.highlight {
 <section id="cat-the-core-shift" class="content-section">
   <h2 class="section-title searchable">The Core Shift</h2>
   <p class='searchable'>Unlike conventional institutional websites or static clearance applications, <strong>FlexiQueue</strong> operates as a <strong>Multi-Surface Queue Orchestration Engine</strong>. It solves the severe queue congestion, announcement fatigue, and dynamic routing breakdowns experienced at institutional service lines (such as SUC Registrars, Cashiers, Advising Desks, and Libraries) by coordinating physical screens and devices into a real-time, offline-resilient state machine.</p>
-  <p class='searchable'>$$\\text{FlexiQueue} = \\underbrace{\\text{Multi-Surface Topology}}<em>{\\text{Kiosk + Display + Staff + Mobile}} + \\underbrace{\\text{Dynamic Flow Engine}}</em>{\\text{State Pattern \\&amp; Routing}} + \\underbrace{\\text{Local-First Failover}}<em>{\\text{SQLite edge + Reverb LAN}} + \\underbrace{\\text{Pillar Coverage}}</em>{\\text{Web + Mobile + ML + IoT + Mapping}}$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
 </section>
 <section id="cat-system-target-metrics" class="content-section">
   <h2 class="section-title searchable">System Target Metrics</h2>
   <ul class='searchable'>
-  <li><strong>Token-to-Screen Propagation</strong>: $&lt;500\\text{ms}$ from administrative call to public display board updates using WebSockets.</li>
-  <li><strong>Local Failover Resilience</strong>: $100\\%$ queueing uptime in the local LAN environment during active WAN outages.</li>
-  <li><strong>Kiosk Transaction Speed</strong>: $&lt;15\\text{s}$ average walk-up token generation time on the self-service kiosk.</li>
-  <li><strong>Text-to-Speech (TTS) Dispatch Delay</strong>: $&lt;2\\text{s}$ from call trigger to localized voice announcement execution on display screens.</li>
-  <li><strong>ML Prediction Accuracy</strong>: Mean Absolute Error (MAE) $&lt;2$ minutes in predicting wait times based on historical transaction logs.</li>
-  <li><strong>Audit Trail Integrity</strong>: $100\\%$ immutable transaction writes via append-only logs for all queue transitions.</li>
+  <li><strong>Token-to-Screen Propagation</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> from administrative call to public display board updates using WebSockets.</li>
+  <li><strong>Local Failover Resilience</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> queueing uptime in the local LAN environment during active WAN outages.</li>
+  <li><strong>Kiosk Transaction Speed</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> average walk-up token generation time on the self-service kiosk.</li>
+  <li><strong>Text-to-Speech (TTS) Dispatch Delay</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> from call trigger to localized voice announcement execution on display screens.</li>
+  <li><strong>ML Prediction Accuracy</strong>: Mean Absolute Error (MAE) <em></em>MATH<em>BLOCK</em>0<em></em> minutes in predicting wait times based on historical transaction logs.</li>
+  <li><strong>Audit Trail Integrity</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> immutable transaction writes via append-only logs for all queue transitions.</li>
   </ul>
   <hr>
 </section>
@@ -1148,7 +1148,7 @@ mark.highlight {
   <ol class='searchable'>
   <li><strong>How is dynamic routing handled?</strong></li>
   </ol>
-  <p class='searchable'>We implement the <strong>State Pattern</strong> for queue sessions. State transitions are governed by a central <code>FlowEngine</code> rather than inline code inside controllers. This allows us to route a single ticket ID across different departments (Registrar $\\rightarrow$ Cashier $\\rightarrow$ Library) cleanly, preserving the student&#x27;s queue identity.</p>
+  <p class='searchable'>We implement the <strong>State Pattern</strong> for queue sessions. State transitions are governed by a central <code>FlowEngine</code> rather than inline code inside controllers. This allows us to route a single ticket ID across different departments (Registrar <em></em>MATH<em>BLOCK</em>0<em></em> Cashier <em></em>MATH<em>BLOCK</em>1<em></em> Library) cleanly, preserving the student&#x27;s queue identity.</p>
   <ol class='searchable'>
   <li><strong>How is waiting time predicted using Machine Learning?</strong></li>
   </ol>
@@ -1289,7 +1289,7 @@ mark.highlight {
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p>A SUC service station (like 3 Cashier windows serving a single queue line) matches the M/M/c model: Poisson arrivals, exponential service times, and $c$ parallel servers. This mathematical model allows us to calculate theoretical wait times, identify bottlenecks, and optimize staff allocation.</p></div>
+        <div class="qa-answer"><p>A SUC service station (like 3 Cashier windows serving a single queue line) matches the M/M/c model: Poisson arrivals, exponential service times, and <em></em>MATH<em>BLOCK</em>0<em></em> parallel servers. This mathematical model allows us to calculate theoretical wait times, identify bottlenecks, and optimize staff allocation.</p></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-12" data-category="Category C: Queueing Theory & Performance">
@@ -1521,16 +1521,16 @@ mark.highlight {
   <h3 class="searchable">The M/M/c Queueing Model</h3>
   <p class='searchable'>Each program or service track in FlexiQueue behaves as a multi-server queueing system, represented under Kendall’s notation as <strong>M/M/c</strong>:</p>
   <ul class='searchable'>
-  <li><strong>Arrival Process (M)</strong>: Student arrivals follow a Poisson distribution with an average arrival rate of $\lambda$ (tokens per hour).</li>
-  <li><strong>Service Process (M)</strong>: Service times follow an exponential distribution with an average service rate of $\mu$ (tokens served per hour per window).</li>
-  <li><strong>Servers (c)</strong>: The number of active, assigned staff terminals ($c$) open for that specific station track.</li>
+  <li><strong>Arrival Process (M)</strong>: Student arrivals follow a Poisson distribution with an average arrival rate of <em></em>MATH<em>BLOCK</em>0<em></em> (tokens per hour).</li>
+  <li><strong>Service Process (M)</strong>: Service times follow an exponential distribution with an average service rate of <em></em>MATH<em>BLOCK</em>0<em></em> (tokens served per hour per window).</li>
+  <li><strong>Servers (c)</strong>: The number of active, assigned staff terminals (<em></em>MATH<em>BLOCK</em>0<em></em>) open for that specific station track.</li>
   </ul>
-  <p class='searchable'>The system utilization factor ($\rho$), which represents the average fraction of time that the windows are busy, is defined as: $$\rho = \frac{\lambda}{c \cdot \mu}$$</p>
-  <p class='searchable'>To prevent infinite queue expansion, the system must maintain $\rho &lt; 1$. Under this condition, the probability that an arriving student must wait in line ($P<em>q$) is governed by the Erlang C formula: $$P</em>q = \frac{\left(\frac{(c\rho)^c}{c!(1-\rho)}\right)}{\sum_{k=0}^{c-1} \frac{(c\rho)^k}{k!} + \frac{(c\rho)^c}{c!(1-\rho)}}$$</p>
+  <p class='searchable'>The system utilization factor (<em></em>MATH<em>BLOCK</em>1<em></em>), which represents the average fraction of time that the windows are busy, is defined as: <em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>To prevent infinite queue expansion, the system must maintain <em></em>MATH<em>BLOCK</em>1<em></em>. Under this condition, the probability that an arriving student must wait in line (<em></em>MATH<em>BLOCK</em>2<em></em>) is governed by the Erlang C formula: <em></em>MATH<em>BLOCK</em>0<em></em></p>
   <h3 class="searchable">Little's Law and Waiting Time Estimation</h3>
-  <p class='searchable'>FlexiQueue utilizes Little&#x27;s Law to display real-time wait times on student mobile triage interfaces. Little&#x27;s Law states that the average number of clients in a stationary queueing system ($L$) is equal to the long-term average effective arrival rate ($\lambda$) multiplied by the average time ($W$) that a client spends in the system: $$L = \lambda \cdot W$$</p>
-  <p class='searchable'>Separating this into queue waiting time ($W<em>q$) and service time: $$W</em>q = \frac{L_q}{\lambda}$$</p>
-  <p class='searchable'>Where $L<em>q$ is the average number of students waiting in the queue. FlexiQueue&#x27;s backend dynamically calculates the estimated wait time ($E</em>{wait}$) for a newly issued token based on active queue length and historical service rates: $$E<em>{wait} = \frac{N</em>{waiting}}{c \cdot \mu<em>{avg}}$$ Where $N</em>{waiting}$ is the number of pending tokens ahead of the student in that track, and $\mu_{avg}$ is the moving average of service completions over the past 30 minutes.</p>
+  <p class='searchable'>FlexiQueue utilizes Little&#x27;s Law to display real-time wait times on student mobile triage interfaces. Little&#x27;s Law states that the average number of clients in a stationary queueing system (<em></em>MATH<em>BLOCK</em>1<em></em>) is equal to the long-term average effective arrival rate (<em></em>MATH<em>BLOCK</em>2<em></em>) multiplied by the average time (<em></em>MATH<em>BLOCK</em>3<em></em>) that a client spends in the system: <em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Separating this into queue waiting time (<em></em>MATH<em>BLOCK</em>1<em></em>) and service time: <em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>1<em></em> is the average number of students waiting in the queue. FlexiQueue&#x27;s backend dynamically calculates the estimated wait time (<em></em>MATH<em>BLOCK</em>2<em></em>) for a newly issued token based on active queue length and historical service rates: <em></em>MATH<em>BLOCK</em>0<em></em> Where <em></em>MATH<em>BLOCK</em>3<em></em> is the number of pending tokens ahead of the student in that track, and <em></em>MATH<em>BLOCK</em>4<em></em> is the moving average of service completions over the past 30 minutes.</p>
   <h3 class="searchable">Dynamic Flow Engine Routing & State Transitions</h3>
   <p class='searchable'>Rather than treating a queue token as a static number, FlexiQueue models each token&#x27;s journey as an audited state machine governed by the <code>FlowEngine</code>.</p>
   <pre class="searchable"><code class="language-mermaid">stateDiagram-v2

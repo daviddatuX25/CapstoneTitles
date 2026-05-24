@@ -888,7 +888,7 @@ mark.highlight {
       <div class="search-flex-container">
         <div class="search-wrapper">
           <span class="search-icon">&#x1F50D;</span>
-          <input type="text" class="search-input" id="search-input" placeholder="Search this guide (e.g. database, security, architecture, key concepts)...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search guide or type AI question, then click 'Explore with AI'...">
           <button class="search-clear" id="search-clear">&times;</button>
         </div>
         <button class="ai-explore-btn" id="ai-explore-btn" onclick="exploreWithAI()">
@@ -959,16 +959,16 @@ mark.highlight {
 <section id="cat-the-core-shift" class="content-section">
   <h2 class="section-title searchable">The Core Shift</h2>
   <p class='searchable'>Unlike generic student information systems or flat form-collectors, <strong>SecureCAT</strong> operates as a <strong>Role-Gated Admission Testing Pipeline</strong> grounded in Information Assurance and Security (IAS) principles. It solves the systemic failures of manual, paper-based college admission testing at ISPSC Tagudin — from disconnected applicant data, zero identity verification at exam doors, uncontrolled score modification, absent audit trails, and zero applicant support during the waiting period — by orchestrating the entire CAT lifecycle under strict role-based access control, state-guarded workflows, and immutable audit logging.</p>
-  <p class='searchable'>$$\text{SecureCAT} = \underbrace{\text{IAS-Grounded RBAC}}<em>{\text{4 Roles + Policy Gates}} + \underbrace{\text{State-Guarded Pipeline}}</em>{\text{Scheduled} \to \text{Active} \to \text{Completed} \to \text{Finalized}} + \underbrace{\text{Immutable Audit Trail}}<em>{\text{Non-Repudiation}} + \underbrace{\text{RAG AI Companion}}</em>{\text{Curated KB + No Hallucination}}$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
 </section>
 <section id="cat-system-target-metrics" class="content-section">
   <h2 class="section-title searchable">System Target Metrics</h2>
   <ul class='searchable'>
-  <li><strong>Application-to-Decision Turnaround</strong>: $&lt;48\text{h}$ from applicant submission to portal account provisioning after staff acceptance.</li>
-  <li><strong>Role Isolation Compliance</strong>: $100\%$ — zero cross-role data leakage; proctors never see scores, applicants never see grading, registrars never modify schedules outside their gate.</li>
-  <li><strong>Session Finalization Integrity</strong>: $0$ score modifications permitted after session finalization — enforced at the database constraint level.</li>
-  <li><strong>Audit Trail Completeness</strong>: $100\%$ of state transitions (application accepted, session activated, scores entered, result released) are immutable logged entries with actor, timestamp, and payload.</li>
-  <li><strong>AI Companion Hallucination Rate</strong>: $0\%$ — the chat widget answers exclusively from RAG-retrieved ISPSC knowledge base documents; no knowledge = no answer.</li>
+  <li><strong>Application-to-Decision Turnaround</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> from applicant submission to portal account provisioning after staff acceptance.</li>
+  <li><strong>Role Isolation Compliance</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> — zero cross-role data leakage; proctors never see scores, applicants never see grading, registrars never modify schedules outside their gate.</li>
+  <li><strong>Session Finalization Integrity</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> score modifications permitted after session finalization — enforced at the database constraint level.</li>
+  <li><strong>Audit Trail Completeness</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> of state transitions (application accepted, session activated, scores entered, result released) are immutable logged entries with actor, timestamp, and payload.</li>
+  <li><strong>AI Companion Hallucination Rate</strong>: <em></em>MATH<em>BLOCK</em>0<em></em> — the chat widget answers exclusively from RAG-retrieved ISPSC knowledge base documents; no knowledge = no answer.</li>
   </ul>
   <hr>
 </section>
@@ -1724,8 +1724,8 @@ mark.highlight {
   <h3 class="searchable">SecureCAT — System Defense Speaker Notes (6-Slide Structure)</h3>
   <p class='searchable'><strong>File map:</strong></p>
   <ul class='searchable'>
-  <li>These notes $\to$ <code>presentation-securecat.html</code> (6 slides with interactive simulator)</li>
-  <li>Live demo script $\to$ <code>Demo-template.md</code> (Acts 1–9)</li>
+  <li>These notes <em></em>MATH<em>BLOCK</em>0<em></em> <code>presentation-securecat.html</code> (6 slides with interactive simulator)</li>
+  <li>Live demo script <em></em>MATH<em>BLOCK</em>0<em></em> <code>Demo-template.md</code> (Acts 1–9)</li>
   </ul>
   <p class='searchable'><strong>Total time budget: ~10 minutes</strong></p>
   <blockquote><p>Slide 1: Title &amp; Registry · 0:20</p>
@@ -1938,7 +1938,7 @@ mark.highlight {
   <h3 class="searchable">Right — Quality Verification Gates</h3>
   <ul class='searchable'>
   <li><strong>PHPUnit Automated Tests:</strong> 48 test cases verifying role-access blocks (403), sequential workflow state-guards, and edit-prevention database triggers.</li>
-  <li><strong>User Acceptance Testing (UAT):</strong> Target SUS score of $\ge 80$ evaluated with 30 key roles, demonstrating 100% role separation.</li>
+  <li><strong>User Acceptance Testing (UAT):</strong> Target SUS score of <em></em>MATH<em>BLOCK</em>0<em></em> evaluated with 30 key roles, demonstrating 100% role separation.</li>
   </ul>
   <h3 class="searchable">Bottom — Conclusion & Metrics</h3>
   <ul class='searchable'>
@@ -2397,12 +2397,12 @@ END;</code></pre>
            ▼
 [Answer to Applicant]</code></pre>
   <h3 class="searchable">6.3 Anti-Hallucination Mechanism</h3>
-  <p class='searchable'>The confidence gate is the primary anti-hallucination mechanism. When no relevant documents are retrieved (similarity score below threshold $\theta$), the system does not forward the question to the LLM at all. Instead, it returns a fallback response:</p>
+  <p class='searchable'>The confidence gate is the primary anti-hallucination mechanism. When no relevant documents are retrieved (similarity score below threshold <em></em>MATH<em>BLOCK</em>0<em></em>), the system does not forward the question to the LLM at all. Instead, it returns a fallback response:</p>
   <blockquote><p><em>&quot;I don&#x27;t have information about that. Please contact the Guidance and Registrar Offices for assistance.&quot;</em></p></blockquote>
   <p class='searchable'>This ensures the LLM never generates answers from its parametric knowledge — it only generates answers grounded in the retrieved institutional documents.</p>
   <p class='searchable'>Formally, the confidence gate is:</p>
-  <p class='searchable'>$$\text{Answer}(q) = \begin{cases} \text{LLM}(q, D<em>{\text{retrieved}}) &amp; \text{if } \max(\text{sim}(q, d</em>i)) \geq \theta \\ \text{Fallback} &amp; \text{otherwise} \end{cases}$$</p>
-  <p class='searchable'>Where $q$ is the applicant&#x27;s question, $D<em>{\text{retrieved}}$ is the set of retrieved documents, $\text{sim}(q, d</em>i)$ is the cosine similarity between the question and document $d_i$, and $\theta$ is the configurable confidence threshold.</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> is the applicant&#x27;s question, <em></em>MATH<em>BLOCK</em>1<em></em> is the set of retrieved documents, <em></em>MATH<em>BLOCK</em>2<em></em> is the cosine similarity between the question and document <em></em>MATH<em>BLOCK</em>3<em></em>, and <em></em>MATH<em>BLOCK</em>4<em></em> is the configurable confidence threshold.</p>
   <h3 class="searchable">6.4 Knowledge Base Curation</h3>
   <p class='searchable'>The ISPSC knowledge base contains only institution-specific documents:</p>
   <ul class='searchable'>

@@ -888,7 +888,7 @@ mark.highlight {
       <div class="search-flex-container">
         <div class="search-wrapper">
           <span class="search-icon">&#x1F50D;</span>
-          <input type="text" class="search-input" id="search-input" placeholder="Search this guide (e.g. database, security, architecture, key concepts)...">
+          <input type="text" class="search-input" id="search-input" placeholder="Search guide or type AI question, then click 'Explore with AI'...">
           <button class="search-clear" id="search-clear">&times;</button>
         </div>
         <button class="ai-explore-btn" id="ai-explore-btn" onclick="exploreWithAI()">
@@ -1020,8 +1020,8 @@ mark.highlight {
   <p class='searchable'>Our system operates in three real-time, low-latency layers:</p>
   <ol class='searchable'>
   <li><strong>The Ingestion &amp; Turn-Taking Pipeline:</strong> We ingest live audio as continuous 20ms packets, routing them through a local, lightweight neural <strong>Voice Activity Detection (VAD)</strong> engine. Our Speech-to-Text (STT) engine cascades partial transcripts every 50ms. A local <strong>Dialogue Act (DA) Transition Matrix</strong> tracks conversational states. When a user speaks, the system distinguishes true utterances from backchannel noise (like <em>&quot;mm-hmm&quot;</em> or <em>&quot;right&quot;</em>), preventing unnecessary model execution and ensuring a response loop of under 700ms.</li>
-  <li><strong>Hardware-Inspired Memory Hierarchy:</strong> To prevent context-window bloat and physical GPU High-Bandwidth Memory (HBM) exhaustion during long sessions, we implement a tiered memory hierarchy. Immediate tokens are stored in the <strong>L1 Execution Cache</strong> of our local quantized model (<strong>Nous Hermes 2 Pro</strong>). Session summaries, edge-lists, and active loops reside in the volatile <strong>L2 Working Memory</strong>. Historical logs, vector databases, and full relational graphs are archived in <strong>Long-Term Storage (Neo4j)</strong>. A semantic <strong>Page-Replacement Algorithm</strong> evicts low-salience chatter ($V<em>{\text{gold}} \to 0$) and compresses high-salience nodes ($V</em>{\text{gold}} \gg 0$) into memory-efficient summaries.</li>
-  <li><strong>Asynchronous Multi-Agent Orchestration:</strong> The agent guild functions as an asynchronous state engine coordinated via an internal Event Bus. The <strong>Context-Captain</strong> acts as the steering core, adjusting the routing threshold $\alpha$ and managing sub-graph splits on topic changes. The <strong>Arbitrator</strong> preserves semantic contradictions by rendering dashed &#x27;tension&#x27; edges. Parallel skill modules—the <strong>Suggestive Agent</strong> (balancing lateral ideation via a divergence controller $\alpha_{\text{div}}$) and the <strong>Corrective Agent</strong> (subtly amber-highlighting misremembered variables with verification links)—support group comprehension.</li>
+  <li><strong>Hardware-Inspired Memory Hierarchy:</strong> To prevent context-window bloat and physical GPU High-Bandwidth Memory (HBM) exhaustion during long sessions, we implement a tiered memory hierarchy. Immediate tokens are stored in the <strong>L1 Execution Cache</strong> of our local quantized model (<strong>Nous Hermes 2 Pro</strong>). Session summaries, edge-lists, and active loops reside in the volatile <strong>L2 Working Memory</strong>. Historical logs, vector databases, and full relational graphs are archived in <strong>Long-Term Storage (Neo4j)</strong>. A semantic <strong>Page-Replacement Algorithm</strong> evicts low-salience chatter (<em></em>MATH<em>BLOCK</em>0<em></em>) and compresses high-salience nodes (<em></em>MATH<em>BLOCK</em>1<em></em>) into memory-efficient summaries.</li>
+  <li><strong>Asynchronous Multi-Agent Orchestration:</strong> The agent guild functions as an asynchronous state engine coordinated via an internal Event Bus. The <strong>Context-Captain</strong> acts as the steering core, adjusting the routing threshold <em></em>MATH<em>BLOCK</em>0<em></em> and managing sub-graph splits on topic changes. The <strong>Arbitrator</strong> preserves semantic contradictions by rendering dashed &#x27;tension&#x27; edges. Parallel skill modules—the <strong>Suggestive Agent</strong> (balancing lateral ideation via a divergence controller <em></em>MATH<em>BLOCK</em>1<em></em>) and the <strong>Corrective Agent</strong> (subtly amber-highlighting misremembered variables with verification links)—support group comprehension.</li>
   </ol>
   <p class='searchable'>To prevent data races and desynchronization between these parallel agents, SynapseRT enforces a software-defined <strong>Semantic Cache Coherence Protocol</strong> modeled after CPU cache coherence (MESI). This architecture is backed by formal, empirical optimization proofs that mathematically minimize a joint cost-latency loss function.</p>
   <p class='searchable'>Ultimately, SynapseRT proves that multi-agent cognitive orchestration can be deployed efficiently at the local edge, transforming ephemeral group discussions into stable, structured, and interactive knowledge maps.&quot;</p>
@@ -1193,7 +1193,7 @@ mark.highlight {
   <h2 class="section-title searchable">2.2 Hardware-Inspired Memory Hierarchy</h2>
   <p class='searchable'>#### 2.2.1 The Problem: Context-Window Bloat A 90-minute meeting with 4 participants generates approximately 18,000–25,000 tokens of raw transcript. Feeding all of this into a language model&#x27;s context window causes:</p>
   <ol class='searchable'>
-  <li><strong>Quadratic attention degradation</strong> — transformer self-attention is $O(n^2)$, so doubling the context quadruples compute time.</li>
+  <li><strong>Quadratic attention degradation</strong> — transformer self-attention is <em></em>MATH<em>BLOCK</em>0<em></em>, so doubling the context quadruples compute time.</li>
   <li><strong>GPU HBM exhaustion</strong> — the KV-cache for a 7B model at 8K context consumes ~1GB of VRAM. Pushing to 32K+ contexts risks Out-Of-Memory (OOM) crashes.</li>
   <li><strong>Signal dilution</strong> — the model loses focus on recent, critical information when flooded with historical chatter.</li>
   </ol>
@@ -1233,20 +1233,20 @@ mark.highlight {
 <td>5–20ms (disk I/O)</td>
 </tr>
 </tbody></table></div>
-  <p class='searchable'>#### 2.2.3 The Semantic Page-Replacement Algorithm ($V_{\text{gold}}$) When the L2 cache reaches capacity (e.g., 200 active nodes), the <strong>Memory Agent</strong> executes a semantic eviction sweep:</p>
-  <p class='searchable'><strong>Step 1 — Weight Mapping:</strong> Each node $s_i$ in L2 is annotated with participant-weighted importance scores:</p>
+  <p class='searchable'>#### 2.2.3 The Semantic Page-Replacement Algorithm (<em></em>MATH<em>BLOCK</em>0<em></em>) When the L2 cache reaches capacity (e.g., 200 active nodes), the <strong>Memory Agent</strong> executes a semantic eviction sweep:</p>
+  <p class='searchable'><strong>Step 1 — Weight Mapping:</strong> Each node <em></em>MATH<em>BLOCK</em>0<em></em> in L2 is annotated with participant-weighted importance scores:</p>
   <ul class='searchable'>
-  <li>Essential concept linkages → weight $w = 3$</li>
-  <li>Optional assertions → weight $w = 1$</li>
-  <li>Social chitchat / filler → weight $w = 0$</li>
+  <li>Essential concept linkages → weight <em></em>MATH<em>BLOCK</em>0<em></em></li>
+  <li>Optional assertions → weight <em></em>MATH<em>BLOCK</em>0<em></em></li>
+  <li>Social chitchat / filler → weight <em></em>MATH<em>BLOCK</em>0<em></em></li>
   </ul>
-  <p class='searchable'><strong>Step 2 — Gold Score Calculation:</strong> $$V<em>{\text{gold}}(s</em>i) = \frac{1}{N} \sum<em>{j=1}^{N} w(l</em>{i,j})$$</p>
-  <p class='searchable'>Where $N$ is the number of annotated links connected to node $s<em>i$, and $w(l</em>{i,j})$ is the importance weight of each link.</p>
+  <p class='searchable'><strong>Step 2 — Gold Score Calculation:</strong> <em></em>MATH<em>BLOCK</em>0<em></em></p>
+  <p class='searchable'>Where <em></em>MATH<em>BLOCK</em>0<em></em> is the number of annotated links connected to node <em></em>MATH<em>BLOCK</em>1<em></em>, and <em></em>MATH<em>BLOCK</em>2<em></em> is the importance weight of each link.</p>
   <p class='searchable'><strong>Step 3 — Sorting &amp; Eviction:</strong></p>
   <ul class='searchable'>
-  <li>Nodes sorted by $V_{\text{gold}}$ in ascending order.</li>
-  <li>Nodes where $V_{\text{gold}} \to 0$ (pure chatter, exhausted fillers) → <strong>immediately evicted</strong> from L2 Redis.</li>
-  <li>Nodes where $V_{\text{gold}} \gg 0$ (high-salience concepts) → <strong>compressed</strong>: the Memory Agent triggers the local SLM to write an abstractive summary of the node cluster, replaces the detailed nodes with a single summary node, and pushes the raw history into Neo4j long-term storage.</li>
+  <li>Nodes sorted by <em></em>MATH<em>BLOCK</em>0<em></em> in ascending order.</li>
+  <li>Nodes where <em></em>MATH<em>BLOCK</em>0<em></em> (pure chatter, exhausted fillers) → <strong>immediately evicted</strong> from L2 Redis.</li>
+  <li>Nodes where <em></em>MATH<em>BLOCK</em>0<em></em> (high-salience concepts) → <strong>compressed</strong>: the Memory Agent triggers the local SLM to write an abstractive summary of the node cluster, replaces the detailed nodes with a single summary node, and pushes the raw history into Neo4j long-term storage.</li>
   </ul>
   <p class='searchable'><strong>Step 4 — Promotion:</strong> When a user or agent references an archived node (e.g., double-clicking a bridge node in the UI), the system <strong>promotes</strong> it back from Neo4j into L2 Redis, analogous to a page fault in virtual memory systems.</p>
   <p class='searchable'>#### 2.2.4 Redis L2 Schema</p>
@@ -1286,7 +1286,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <td><strong>Context-Captain</strong></td>
 <td>Steering core — routing, topic management, sub-graph splits</td>
 <td>Every finalized DA segment</td>
-<td>Routing decisions, sub-graph isolation commands, $\alpha$ threshold adjustments</td>
+<td>Routing decisions, sub-graph isolation commands, <em></em>MATH<em>BLOCK</em>0<em></em> threshold adjustments</td>
 </tr>
 <tr>
 <td><strong>Arbitrator</strong></td>
@@ -1309,7 +1309,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 </tbody></table></div>
   <p class='searchable'>#### 2.3.2 The Context-Captain in Detail The Context-Captain is the <strong>only agent with write access to the routing table</strong>. It makes three critical decisions per incoming segment:</p>
   <ol class='searchable'>
-  <li><strong>Local vs. Cloud Routing ($\alpha$ threshold):</strong> Should this segment be processed by the local SLM (fast, free, lower quality) or escalated to a cloud API (slower, expensive, higher quality)? Governed by the cost-latency loss function (see §2.5).</li>
+  <li><strong>Local vs. Cloud Routing (<em></em>MATH<em>BLOCK</em>0<em></em> threshold):</strong> Should this segment be processed by the local SLM (fast, free, lower quality) or escalated to a cloud API (slower, expensive, higher quality)? Governed by the cost-latency loss function (see §2.5).</li>
   <li><strong>Topic Continuity vs. Shift:</strong> Does this segment continue the current topic, or does it signal a new topic? If a shift is detected, the Context-Captain seals the current sub-graph and opens a new canvas.</li>
   <li><strong>Agent Dispatch:</strong> Which agents should be activated for this segment? A simple factual statement triggers only the Corrective Agent. A controversial assertion triggers both the Arbitrator and the Suggestive Agent.</li>
   </ol>
@@ -1319,10 +1319,10 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
   <li><strong>Conflict Flagging:</strong> The Arbitrator compares the assertions against the active L2 graph. Detecting a semantic mismatch, it flags the contradiction.</li>
   <li><strong>Preserving Tension:</strong> Instead of overwriting Participant A&#x27;s node with B&#x27;s node, the Arbitrator creates both nodes, links them to a shared parent, and connects them with a dashed red <strong>Tension Edge</strong> labeled with the contradiction details. This visualizes the divergence for the group to resolve later, rather than silently picking a winner.</li>
   </ol>
-  <p class='searchable'>#### 2.3.4 The Suggestive Agent &amp; Divergence Controller ($\alpha_{\text{div}}$) The Suggestive Agent monitors conversational entropy. When the discussion loops on a narrow topic:</p>
+  <p class='searchable'>#### 2.3.4 The Suggestive Agent &amp; Divergence Controller (<em></em>MATH<em>BLOCK</em>0<em></em>) The Suggestive Agent monitors conversational entropy. When the discussion loops on a narrow topic:</p>
   <ul class='searchable'>
   <li>It computes a <strong>divergence score</strong> based on the semantic distance between the last N dialogue acts and the broader topic graph.</li>
-  <li>If divergence falls below $\alpha_{\text{div}}$ (i.e., the conversation is too narrow), the agent proposes lateral connections: &quot;The group has been discussing database schema for 8 minutes. Related but unexplored: caching strategy, API versioning.&quot;</li>
+  <li>If divergence falls below <em></em>MATH<em>BLOCK</em>0<em></em> (i.e., the conversation is too narrow), the agent proposes lateral connections: &quot;The group has been discussing database schema for 8 minutes. Related but unexplored: caching strategy, API versioning.&quot;</li>
   <li>If divergence is too high (conversation is scattered), the agent signals the Context-Captain to tighten focus.</li>
   </ul>
   <p class='searchable'>#### 2.3.5 The Corrective Agent &amp; Amber Alerts The Corrective Agent constantly cross-references live transcriptions against a local compiled knowledge base (RAG — Retrieval-Augmented Generation):</p>
@@ -1418,7 +1418,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
   <h2 class="section-title searchable">2.5 Cost-Latency Optimization & Routing Proofs</h2>
   <p class='searchable'>#### 2.5.1 The Routing Problem Not all conversational segments require the same level of AI sophistication. A simple factual statement (&quot;The meeting is at 3 PM&quot;) can be handled by the local 7B SLM. A complex synthesis request (&quot;Summarize the three competing database proposals and recommend one&quot;) may benefit from a cloud-hosted frontier model.</p>
   <p class='searchable'>The <strong>Context-Captain</strong> uses a binary classifier (based on RouteLLM) to decide: local or cloud?</p>
-  <p class='searchable'>#### 2.5.2 The Loss Function The routing threshold $\alpha$ is optimized to minimize: $$\min<em>{\alpha} \Big( C</em>{\text{API}}(\alpha) + \lambda \cdot L<em>{\text{system}}(\alpha) \Big) \quad \text{subject to } Q</em>{\text{synthesis}}(\alpha) \ge \beta$$</p>
+  <p class='searchable'>#### 2.5.2 The Loss Function The routing threshold <em></em>MATH<em>BLOCK</em>1<em></em> is optimized to minimize: <em></em>MATH<em>BLOCK</em>0<em></em></p>
   <div class='table-container'><table class='searchable'>
 <thead><tr>
 <th>Variable</th>
@@ -1426,42 +1426,42 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 </tr></thead>
 <tbody>
 <tr>
-<td>$\alpha$</td>
-<td>Routing threshold — segments with complexity score $\ge \alpha$ are sent to cloud</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
+<td>Routing threshold — segments with complexity score <em></em>MATH<em>BLOCK</em>0<em></em> are sent to cloud</td>
 </tr>
 <tr>
-<td>$C_{\text{API}}(\alpha)$</td>
-<td>Cumulative API cost — decreases as $\alpha$ increases (more local processing)</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
+<td>Cumulative API cost — decreases as <em></em>MATH<em>BLOCK</em>0<em></em> increases (more local processing)</td>
 </tr>
 <tr>
-<td>$L_{\text{system}}(\alpha)$</td>
-<td>System latency — decreases as $\alpha$ increases (local edge = no WAN delay)</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
+<td>System latency — decreases as <em></em>MATH<em>BLOCK</em>0<em></em> increases (local edge = no WAN delay)</td>
 </tr>
 <tr>
-<td>$\lambda$</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
 <td>User-defined weight balancing cost vs. speed</td>
 </tr>
 <tr>
-<td>$Q_{\text{synthesis}}(\alpha)$</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
 <td>Human-validated synthesis quality score</td>
 </tr>
 <tr>
-<td>$\beta$</td>
+<td><em></em>MATH<em>BLOCK</em>0<em></em></td>
 <td>Minimum acceptable quality threshold</td>
 </tr>
 </tbody></table></div>
-  <p class='searchable'>#### 2.5.3 Tuning $\lambda$</p>
+  <p class='searchable'>#### 2.5.3 Tuning <em></em>MATH<em>BLOCK</em>0<em></em></p>
   <ul class='searchable'>
-  <li><strong>Budget-constrained mode</strong> (stable internet, tight budget): High $\lambda$ → penalizes cost, forces more local processing.</li>
-  <li><strong>Quality-critical mode</strong> (live defense, high-stakes meeting): Low $\lambda$ → allows more cloud escalation for superior synthesis.</li>
-  <li><strong>Offline mode</strong> ($\lambda = \infty$): All processing stays local. No cloud calls. Maximum privacy.</li>
+  <li><strong>Budget-constrained mode</strong> (stable internet, tight budget): High <em></em>MATH<em>BLOCK</em>0<em></em> → penalizes cost, forces more local processing.</li>
+  <li><strong>Quality-critical mode</strong> (live defense, high-stakes meeting): Low <em></em>MATH<em>BLOCK</em>0<em></em> → allows more cloud escalation for superior synthesis.</li>
+  <li><strong>Offline mode</strong> (<em></em>MATH<em>BLOCK</em>0<em></em>): All processing stays local. No cloud calls. Maximum privacy.</li>
   </ul>
-  <p class='searchable'>The Context-Captain dynamically adjusts $\lambda$ based on the active &quot;room mode&quot; configured by the facilitator.</p>
+  <p class='searchable'>The Context-Captain dynamically adjusts <em></em>MATH<em>BLOCK</em>0<em></em> based on the active &quot;room mode&quot; configured by the facilitator.</p>
   <p class='searchable'>#### 2.5.4 Empirical Verification We validate the convergence of this function by running continuous 90-minute test streams, logging:</p>
   <ul class='searchable'>
   <li>System memory footprints over time</li>
   <li>F1-scores of turn-detection accuracy</li>
-  <li>Graph readability index ($R_{\text{graph}}$)</li>
+  <li>Graph readability index (<em></em>MATH<em>BLOCK</em>0<em></em>)</li>
   <li>API cost accumulation curves</li>
   <li>Human quality ratings (NASA-TLX cognitive load survey)</li>
   </ul>
@@ -1499,11 +1499,11 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
   <li><em>Long-Term Storage:</em> Persistent Neo4j graph database and vector stores for cross-session episodic logs.</li>
   </ul>
   <ol class='searchable'>
-  <li><strong>Semantic Paging ($V_{\text{gold}}$):</strong> We evaluate the salience of L2 segments:</li>
+  <li><strong>Semantic Paging (<em></em>MATH<em>BLOCK</em>0<em></em>):</strong> We evaluate the salience of L2 segments:</li>
   </ol>
-  <p class='searchable'>$$V<em>{\text{gold}}(s</em>i) = \frac{1}{N} \sum<em>{j=1}^{N} w(l</em>{i,j})$$</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em></p>
   <ol class='searchable'>
-  <li><strong>Intelligent Eviction:</strong> When L2 reaches capacity, social backchannels and highly redundant segments ($V<em>{\text{gold}} \to 0$) are evicted. High-salience elements ($V</em>{\text{gold}} \gg 0$) are compressed into abstracted summaries and maintained in L2 RAM.</li>
+  <li><strong>Intelligent Eviction:</strong> When L2 reaches capacity, social backchannels and highly redundant segments (<em></em>MATH<em>BLOCK</em>0<em></em>) are evicted. High-salience elements (<em></em>MATH<em>BLOCK</em>1<em></em>) are compressed into abstracted summaries and maintained in L2 RAM.</li>
   </ol>
 </section>
 <section id="cat-argument-3-the-semantic-cache-coherence-mesi-defense-multi-agent-conflict" class="content-section">
@@ -1522,16 +1522,16 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <section id="cat-argument-4-the-cost-latency-optimization-proof-and-verification-defense" class="content-section">
   <h2 class="section-title searchable">Argument 4: The Cost-Latency Optimization Proof & Verification Defense</h2>
   <ul class='searchable'>
-  <li><strong>The Attack:</strong> <em>&quot;How do you prove that your routing threshold ($\alpha$) is actually optimal? Isn&#x27;t it just a trial-and-error slider?&quot;</em></li>
+  <li><strong>The Attack:</strong> <em>&quot;How do you prove that your routing threshold (<em></em>MATH<em>BLOCK</em>0<em></em>) is actually optimal? Isn&#x27;t it just a trial-and-error slider?&quot;</em></li>
   <li><strong>The Rebuttal:</strong> &quot;We prove the optimality of our routing threshold by framing it as a multi-objective cost-latency optimization problem, minimizing a joint loss function while maintaining a human-validated synthesis quality constraint.&quot;</li>
   <li><strong>The Logic:</strong></li>
   </ul>
   <ol class='searchable'>
   <li><strong>The Loss Function:</strong> The edge-cloud escalation choice is governed by:</li>
   </ol>
-  <p class='searchable'>$$\min<em>{\alpha} \Big( C</em>{\text{API}}(\alpha) + \lambda \cdot L<em>{\text{system}}(\alpha) \Big) \quad \text{subject to } Q</em>{\text{synthesis}}(\alpha) \ge \beta$$ Where $C<em>{\text{API}}$ represents the operational financial cost of cloud calls, $L</em>{\text{system}}$ is the systemic latency, and $\lambda$ is a user-defined optimization weight balancing resource conservation against processing speed.</p>
+  <p class='searchable'><em></em>MATH<em>BLOCK</em>0<em></em> Where <em></em>MATH<em>BLOCK</em>1<em></em> represents the operational financial cost of cloud calls, <em></em>MATH<em>BLOCK</em>2<em></em> is the systemic latency, and <em></em>MATH<em>BLOCK</em>3<em></em> is a user-defined optimization weight balancing resource conservation against processing speed.</p>
   <ol class='searchable'>
-  <li><strong>Quality Boundary ($\beta$):</strong> The routing is constrained such that the human-validated quality score of the structural context mapping ($Q_{\text{synthesis}}$) remains above a minimum acceptable baseline $\beta$.</li>
+  <li><strong>Quality Boundary (<em></em>MATH<em>BLOCK</em>0<em></em>):</strong> The routing is constrained such that the human-validated quality score of the structural context mapping (<em></em>MATH<em>BLOCK</em>1<em></em>) remains above a minimum acceptable baseline <em></em>MATH<em>BLOCK</em>2<em></em>.</li>
   <li><strong>Empirical Verification:</strong> We run continuous 90-minute testing streams through the system, logging system memory footprints, F1-scores of turn-detection latency, and graph readability indexes to empirically prove the convergence of this function.</li>
   </ol>
   <hr>
@@ -1588,7 +1588,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
   <li>Real-time streaming audio ingestion and transcription for <strong>English and Taglish</strong> (Tagalog-English code-switching) in multi-party settings (2–6 concurrent speakers).</li>
   <li>Local edge deployment on a single dedicated GPU host workstation (RTX 3060 12GB).</li>
   <li>Four-agent asynchronous orchestration (Context-Captain, Arbitrator, Suggestive, Corrective) with MESI synchronization.</li>
-  <li>Tiered memory hierarchy (L1/L2/Long-Term) with $V_{\text{gold}}$ semantic paging.</li>
+  <li>Tiered memory hierarchy (L1/L2/Long-Term) with <em></em>MATH<em>BLOCK</em>0<em></em> semantic paging.</li>
   <li>Interactive web-based knowledge graph visualization using D3.js and SvelteKit.</li>
   <li>Empirical validation through controlled 90-minute session experiments with NASA-TLX surveys.</li>
   </ol>
@@ -1859,19 +1859,19 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
     <div class="qa-item searchable" data-qa-id="qa-9" data-category="Category C: Tiered Memory Hierarchy & Paging Heuristics">
       <button class="qa-header">
         <span class="qa-q-badge">Q</span>
-        <span class="qa-question-text">How is the $V_{\text{gold}}$ semantic paging eviction rule calculated and executed step-by-step?</span>
+        <span class="qa-question-text">How is the <em></em>MATH<em>BLOCK</em>0<em></em> semantic paging eviction rule calculated and executed step-by-step?</span>
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
         <div class="qa-answer"><p><em></em> &quot;When the Redis L2 cache size crosses our allocation limit (e.g., 200 active nodes):</p>
 <ol>
-<li><strong>Weight Mapping:</strong> The Memory Agent retrieves the annotator/participant weight $w(l<em>{i,j})$ for each node $s</em>i$. Essential concept linkages receive a weight of 3, optional assertions a weight of 1, and social chitchat a weight of 0.</li>
+<li><strong>Weight Mapping:</strong> The Memory Agent retrieves the annotator/participant weight <em></em>MATH<em>BLOCK</em>0<em></em> for each node <em></em>MATH<em>BLOCK</em>1<em></em>. Essential concept linkages receive a weight of 3, optional assertions a weight of 1, and social chitchat a weight of 0.</li>
 <li><strong>Equation Calculation:</strong> We calculate the average score:</li>
 </ol>
-<p>$$V<em>{\text{gold}}(s</em>i) = \frac{1}{N} \sum<em>{j=1}^{N} w(l</em>{i,j})$$</p>
+<p><em></em>MATH<em>BLOCK</em>0<em></em></p>
 <ol>
-<li><strong>Sorting &amp; Eviction:</strong> The nodes are sorted by $V_{\text{gold}}$ in ascending order.</li>
-<li><strong>Paging/Archiving:</strong> Nodes where $V<em>{\text{gold}} \to 0$ are immediately evicted from the volatile Redis L2 cache. Nodes with $V</em>{\text{gold}} \gg 0$ are compressed: the Memory Agent triggers the local model to write an abstractive summary of these nodes, updates the parent node in L2 with the summary, and evicts the detailed child nodes, pushing the raw history into the long-term Neo4j database.&quot;</li>
+<li><strong>Sorting &amp; Eviction:</strong> The nodes are sorted by <em></em>MATH<em>BLOCK</em>0<em></em> in ascending order.</li>
+<li><strong>Paging/Archiving:</strong> Nodes where <em></em>MATH<em>BLOCK</em>0<em></em> are immediately evicted from the volatile Redis L2 cache. Nodes with <em></em>MATH<em>BLOCK</em>1<em></em> are compressed: the Memory Agent triggers the local model to write an abstractive summary of these nodes, updates the parent node in L2 with the summary, and evicts the detailed child nodes, pushing the raw history into the long-term Neo4j database.&quot;</li>
 </ol></div>
       </div>
     </div>
@@ -2015,48 +2015,48 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <li><strong>Instrumentation:</strong> We log timestamps at:</li>
 </ol>
 <ul>
-<li>$T_0$: Audio frame generated at microphone.</li>
-<li>$T_{\text{VAD}}$: Neural VAD signals voice endpoint.</li>
-<li>$T_{\text{STT}}$: Whisper emits final text token.</li>
-<li>$T_{\text{dispatch}}$: Context-Captain dispatches event to Event Bus.</li>
+<li><em></em>MATH<em>BLOCK</em>0<em></em>: Audio frame generated at microphone.</li>
+<li><em></em>MATH<em>BLOCK</em>0<em></em>: Neural VAD signals voice endpoint.</li>
+<li><em></em>MATH<em>BLOCK</em>0<em></em>: Whisper emits final text token.</li>
+<li><em></em>MATH<em>BLOCK</em>0<em></em>: Context-Captain dispatches event to Event Bus.</li>
 </ul>
 <ol>
-<li><strong>Metrics:</strong> We measure the end-to-end loop ($T<em>{\text{dispatch}} - T</em>0$). The target is to maintain an average latency of $&lt;700\text{ms}$ while keeping false-interruption cut-offs (where the VAD cuts off a speaker who was just pausing) below 5%.&quot;</li>
+<li><strong>Metrics:</strong> We measure the end-to-end loop (<em></em>MATH<em>BLOCK</em>0<em></em>). The target is to maintain an average latency of <em></em>MATH<em>BLOCK</em>1<em></em> while keeping false-interruption cut-offs (where the VAD cuts off a speaker who was just pausing) below 5%.&quot;</li>
 </ol></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-18" data-category="Category F: Usability, Verification, & Empirical Math Proofs">
       <button class="qa-header">
         <span class="qa-q-badge">Q</span>
-        <span class="qa-question-text">Explain Experiment 2 and how you calculate the Node-to-Edge Visual Readability Index ($R_{\text{graph}}$).</span>
+        <span class="qa-question-text">Explain Experiment 2 and how you calculate the Node-to-Edge Visual Readability Index (<em></em>MATH<em>BLOCK</em>0<em></em>).</span>
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
-        <div class="qa-answer"><p><em></em> &quot;We evaluate if our $V_{\text{gold}}$ memory eviction protocol prevents visual clutter:</p>
+        <div class="qa-answer"><p><em></em> &quot;We evaluate if our <em></em>MATH<em>BLOCK</em>0<em></em> memory eviction protocol prevents visual clutter:</p>
 <ol>
-<li><strong>Methodology:</strong> We run a 90-minute design session through two setups: Control (standard rolling token graph, no eviction) and Experimental (running $V_{\text{gold}}$ eviction and node compression).</li>
+<li><strong>Methodology:</strong> We run a 90-minute design session through two setups: Control (standard rolling token graph, no eviction) and Experimental (running <em></em>MATH<em>BLOCK</em>0<em></em> eviction and node compression).</li>
 <li><strong>Formulation:</strong> We calculate the Readability Index:</li>
 </ol>
-<p>$$R<em>{\text{graph}} = \frac{V</em>{\text{active}}}{E<em>{\text{active}}} \cdot \frac{1}{1 + D</em>{\text{crossing}}}$$</p>
-<p>Where $V<em>{\text{active}}$ is the number of active nodes, $E</em>{\text{active}}$ is the number of links, and $D_{\text{crossing}}$ is the count of overlapping or crossing edges.</p>
+<p><em></em>MATH<em>BLOCK</em>0<em></em></p>
+<p>Where <em></em>MATH<em>BLOCK</em>0<em></em> is the number of active nodes, <em></em>MATH<em>BLOCK</em>1<em></em> is the number of links, and <em></em>MATH<em>BLOCK</em>2<em></em> is the count of overlapping or crossing edges.</p>
 <ol>
-<li><strong>Target:</strong> The Experimental setup must maintain an $R_{\text{graph}}$ score $\ge 0.75$ throughout the 90 minutes, whereas the Control setup is expected to degrade to $&lt;0.30$ as nodes accumulate.&quot;</li>
+<li><strong>Target:</strong> The Experimental setup must maintain an <em></em>MATH<em>BLOCK</em>0<em></em> score <em></em>MATH<em>BLOCK</em>1<em></em> throughout the 90 minutes, whereas the Control setup is expected to degrade to <em></em>MATH<em>BLOCK</em>2<em></em> as nodes accumulate.&quot;</li>
 </ol></div>
       </div>
     </div>
     <div class="qa-item searchable" data-qa-id="qa-19" data-category="Category F: Usability, Verification, & Empirical Math Proofs">
       <button class="qa-header">
         <span class="qa-q-badge">Q</span>
-        <span class="qa-question-text">Walk the panel through the Cost-Latency Optimization Proof and how $\lambda$ is tuned.</span>
+        <span class="qa-question-text">Walk the panel through the Cost-Latency Optimization Proof and how <em></em>MATH<em>BLOCK</em>0<em></em> is tuned.</span>
         <span class="qa-toggle">+</span>
       </button>
       <div class="qa-body">
         <div class="qa-answer"><p><em></em> &quot;We model our routing as a multi-objective loss minimization:</p>
-<p>$$\min<em>{\alpha} \Big( C</em>{\text{API}}(\alpha) + \lambda \cdot L<em>{\text{system}}(\alpha) \Big) \quad \text{subject to } Q</em>{\text{synthesis}}(\alpha) \ge \beta$$</p>
+<p><em></em>MATH<em>BLOCK</em>0<em></em></p>
 <ol>
-<li><strong>Cost function $C_{\text{API}}(\alpha)$:</strong> The cumulative API cost, which decreases as the threshold $\alpha$ increases (forcing more local model usage).</li>
-<li><strong>Latency function $L_{\text{system}}(\alpha)$:</strong> System latency, which decreases as $\alpha$ increases because local edge processing (no WAN delays) takes under 200ms compared to cloud API roundtrips (1.2s+).</li>
-<li><strong>Tuning parameter $\lambda$:</strong> If we have a stable internet connection but a tight budget, we set a high $\lambda$ to penalize cost. If speed and conceptual quality are paramount (such as during a live title defense), we set a low $\lambda$, allowing more cloud escalation. The Context-Captain dynamically adjusts $\lambda$ based on the active room mode, ensuring the optimal threshold $\alpha$ is maintained automatically.&quot;</li>
+<li><strong>Cost function <em></em>MATH<em>BLOCK</em>0<em></em>:</strong> The cumulative API cost, which decreases as the threshold <em></em>MATH<em>BLOCK</em>1<em></em> increases (forcing more local model usage).</li>
+<li><strong>Latency function <em></em>MATH<em>BLOCK</em>0<em></em>:</strong> System latency, which decreases as <em></em>MATH<em>BLOCK</em>1<em></em> increases because local edge processing (no WAN delays) takes under 200ms compared to cloud API roundtrips (1.2s+).</li>
+<li><strong>Tuning parameter <em></em>MATH<em>BLOCK</em>0<em></em>:</strong> If we have a stable internet connection but a tight budget, we set a high <em></em>MATH<em>BLOCK</em>1<em></em> to penalize cost. If speed and conceptual quality are paramount (such as during a live title defense), we set a low <em></em>MATH<em>BLOCK</em>2<em></em>, allowing more cloud escalation. The Context-Captain dynamically adjusts <em></em>MATH<em>BLOCK</em>3<em></em> based on the active room mode, ensuring the optimal threshold <em></em>MATH<em>BLOCK</em>4<em></em> is maintained automatically.&quot;</li>
 </ol></div>
       </div>
     </div>
@@ -2145,7 +2145,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <p>| <strong>Output Format</strong> | Flat text transcript | Interactive relational knowledge graph |</p>
 <p>| <strong>Latency</strong> | 3–10 seconds (batch) | &lt; 700ms (streaming) |</p>
 <p>| <strong>Contradiction Handling</strong> | None — overwrites or ignores | Preserves tension edges between conflicting assertions |</p>
-<p>| <strong>Memory Management</strong> | Rolling context window (token limit) | Tiered hierarchy with semantic paging ($V_{\text{gold}}$) |</p>
+<p>| <strong>Memory Management</strong> | Rolling context window (token limit) | Tiered hierarchy with semantic paging (<em></em>MATH<em>BLOCK</em>0<em></em>) |</p>
 <p>| <strong>Privacy</strong> | Cloud-dependent (audio uploaded) | Local edge (audio never leaves premise) |</p>
 <p>| <strong>Synchronization</strong> | N/A (single agent) | MESI cache coherence protocol |</p>
 <p>| <strong>Cognitive Load Mitigation</strong> | None (passive dump) | Active — Suggestive Agent, sub-graph isolation, amber alerts |</p>
@@ -2185,13 +2185,13 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <tr>
 <td><strong>Phase 2 — Agent Orchestration &amp; Memory</strong></td>
 <td>Weeks 5–10</td>
-<td>Multi-agent framework, Event Bus, MESI protocol, L1/L2/LT memory hierarchy, $V_{\text{gold}}$ paging, DA classifier</td>
+<td>Multi-agent framework, Event Bus, MESI protocol, L1/L2/LT memory hierarchy, <em></em>MATH<em>BLOCK</em>0<em></em> paging, DA classifier</td>
 <td>Working multi-agent system that produces structured graph output from live audio</td>
 </tr>
 <tr>
 <td><strong>Phase 3 — Visualization &amp; Evaluation</strong></td>
 <td>Weeks 11–14</td>
-<td>D3.js knowledge graph, SvelteKit dashboard, role-based views, sub-graph splits, empirical experiments (NASA-TLX, $R_{\text{graph}}$)</td>
+<td>D3.js knowledge graph, SvelteKit dashboard, role-based views, sub-graph splits, empirical experiments (NASA-TLX, <em></em>MATH<em>BLOCK</em>0<em></em>)</td>
 <td>Complete system with evaluation data and defense-ready results</td>
 </tr>
 </tbody></table></div>
@@ -2244,7 +2244,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 <tr>
 <td><strong>Memory Tiering</strong></td>
 <td>Redis (In-Memory Database)</td>
-<td>L1/L2 Semantic Paging, $V_{\text{gold}}$ formula</td>
+<td>L1/L2 Semantic Paging, <em></em>MATH<em>BLOCK</em>0<em></em> formula</td>
 <td>Transient Redis data flushing, encrypted local caches</td>
 <td>Manages volatile context cache, summaries, and unresolved loops.</td>
 </tr>
@@ -2299,7 +2299,7 @@ HSET session:{sid}:meta started_at {ts} participants {count} l2_node_count {n}</
 </tr>
 <tr>
 <td><strong>Verification</strong></td>
-<td>NASA-TLX Survey, $R_{\text{graph}}$ index</td>
+<td>NASA-TLX Survey, <em></em>MATH<em>BLOCK</em>0<em></em> index</td>
 <td>Standardized 6-pillar cognitive index</td>
 <td>Anonymized survey aggregation</td>
 <td>Empirically evaluates cognitive load and graph readability.</td>
